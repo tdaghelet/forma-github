@@ -1,0 +1,26 @@
+name: ex5_2
+on: 
+  workflow_dispatch:
+
+jobs:
+  run-npm-install:
+    strategy:
+        matrix:
+            node-version: [ '20', 'lts' ]
+            runner: [ 'ubuntu-latest', 'ubuntu-22.04' ]
+            include:
+                - runner: ubuntu-latest
+                  node-version: '18'
+    runs-on: ${{ matrix.runner }}
+    steps:
+        - name: checkout
+          uses: actions/checkout@v4
+        - name : setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name: run install
+          shell: bash
+          run: |
+            npm install
+            npm test
