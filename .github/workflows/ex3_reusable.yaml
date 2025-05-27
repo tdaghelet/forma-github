@@ -1,0 +1,25 @@
+name: ex3 _ reusable workflow
+on: 
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: true
+        default: 'lts/*'
+
+jobs:
+  run-npm-test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v4
+        - name : setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: ${{ inputs.node-version }}
+        - name: run test
+          shell: bash
+          run: |
+            node -v
+            npm install
+            npm test
