@@ -2,11 +2,8 @@ name: ex3
 on: 
   workflow_dispatch:
 
-env:
-  NODE_VERSION: '20'
-
 jobs:
   run-npm-test:
     uses: tdaghelet/forma-github/.github/workflows/ex3_reusable.yaml@main
     with:
-      node-version: ${{ env.NODE_VERSION }}
+      node-version: 20
