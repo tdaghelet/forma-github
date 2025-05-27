@@ -6,7 +6,7 @@ jobs:
   run-npm-install:
     strategy:
         matrix:
-            node-version: [ '20', 'lts' ]
+            node-version: [ '20', 'lts/*' ]
             runner: [ 'ubuntu-latest', 'ubuntu-22.04' ]
             include:
                 - runner: ubuntu-latest
