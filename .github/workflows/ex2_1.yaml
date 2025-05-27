@@ -1,0 +1,20 @@
+name: ex2_1 Switch Node version
+on: 
+  pull_request:
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  run-npm-test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v4
+        - name : setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+        - name: check node version
+          shell: bash
+          run: node -v
