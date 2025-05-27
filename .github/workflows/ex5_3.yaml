@@ -1,0 +1,26 @@
+name: ex5_3
+on: 
+  pull_request:
+  push:
+    branches: 
+      - main
+
+jobs:
+  run-npm-install:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v4
+        - name : setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: 'lts/*'
+        - name: run install
+          shell: bash
+          run: |
+            npm install
+            npm test
+        - if: ${{ github.ref == 'refs/heads/main' }}
+          name: docker build
+          run: |
+            docker build -t my-node-app .
