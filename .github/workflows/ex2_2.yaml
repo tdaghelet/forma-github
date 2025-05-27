@@ -4,6 +4,8 @@ on:
 
 jobs:
   create-issue:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Short sha
@@ -12,7 +14,7 @@ jobs:
       - name: create issue on github
         run: |
             curl --request POST \
-            --url https://api.github.com/repos/tdaghelet/forma-github/issues \
+            --url https://api.github.com/repos/forma-github/issues \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header 'content-type: application/json' \
             --data '{
