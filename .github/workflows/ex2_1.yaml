@@ -1,6 +1,6 @@
 name: ex2_1 Switch Node version
 on: 
-  pull_request:
+  workflow_dispatch:
 
 env:
   NODE_VERSION: '20'
