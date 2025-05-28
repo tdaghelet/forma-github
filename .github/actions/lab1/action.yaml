@@ -1,17 +1,17 @@
-name: "Syntax:Lab1"
-description: "Action of Lab1 in Syntax section"
+name: 'Syntax:Lab1'
+description: 'Action of Lab1 in Syntax section'
 inputs:
   say:
-    description: say
+    description: 'The text to say'
     required: true
   eyes:
-    description: eyes
+    description: 'The eyes to use'
     required: false
-    default: oo
+    default: 'oo'
 runs:
-  using: "docker"
-  image: "docker://rancher/cowsay:latest"
+  using: 'docker'
+  image: 'docker://rancher/cowsay:latest'
   args:
-    - -e
-    - ${{ inputs.eyes }}
-    - ${{ inputs.say }}
+    - '${{ inputs.say }}'
+    - '-e'
+    - '${{ inputs.eyes }}'
