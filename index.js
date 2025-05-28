@@ -24,15 +24,15 @@ async function run() {
       }
     });
 
-    core.summary.addHeading("Package.json analysis")
+    core.summary.addHeading("Package.json analysis").write();
     if (analysedPackageJsonCount == 0){
-      core.summary.addRaw("No package.json found")
+      core.summary.addRaw("No package.json found").write();
     } else {
       if (missingPackageLockJsonCount == 0) {
-        core.summary.addRaw("No missing package-lock.json files based on ${analysedPackageJsonCount} package.json files analysed");
+        core.summary.addRaw("No missing package-lock.json files based on ${analysedPackageJsonCount} package.json files analysed").write();
       }
       else {
-        core.summary.addRaw("Missing ${missingPackageLockJsonCount} package-lock.json files based on ${analysedPackageJsonCount} package.json files analysed");
+        core.summary.addRaw("Missing ${missingPackageLockJsonCount} package-lock.json files based on ${analysedPackageJsonCount} package.json files analysed").write();
       }
     }
     
