@@ -7,6 +7,6 @@ jobs:
             directory: [ 'docs/section1', 'docs/section2', 'docs/section3', 'docs/section4' ]
     runs-on: ubuntu-latest
     steps:
-      - uses: ./lab5_reusablewf.yaml
+      - uses: ./.github/workflows/lab5_reusablewf.yaml
         with:
           directory: ${{ matrix.directory }}
