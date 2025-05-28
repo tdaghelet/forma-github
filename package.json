@@ -1,24 +1,15 @@
 {
-  "name": "sfeir-school-github-actions-template",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "interactions-lab1",
+  "version": "1.0.0",
+  "description": "Action of Lab1 in Interactions section",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "test": "vitest",
-    "preview": "vite preview"
+    "prepare": "NODE_OPTIONS=--openssl-legacy-provider ncc build index.js -o dist --source-map"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@actions/core": "^1.10.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0",
-    "vitest": "^0.29.2"
+    "@vercel/ncc": "^0.31.1"
   }
 }
