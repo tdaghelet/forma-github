@@ -1,6 +1,6 @@
 name: ex5_3
 on: 
-  pull_request:
+#  pull_request:
   workflow_dispatch:
 #  push:
 #    branches: 
