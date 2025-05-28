@@ -1,5 +1,6 @@
-name: Test the Lab 1 of Code
-on: push
+name: LAB2
+on: 
+  workflow_dispatch:
 jobs:
   test-syntax-lab1:
     runs-on: ubuntu-latest

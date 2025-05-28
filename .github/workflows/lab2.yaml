@@ -1,0 +1,17 @@
+name: LAB2
+on: 
+  workflow_dispatch:
+jobs:
+  test-syntax-lab2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: upper_action
+        uses: ./.
+        with:
+          text: GitHub Action Rocks
+
+      # Check the Job summary to see the notice message
+      - run: |
+          echo "::notice ::${{ steps.upper_action.outputs.upper_text }}"
