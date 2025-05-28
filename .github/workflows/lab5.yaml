@@ -12,4 +12,4 @@ jobs:
           - docs/section4
     uses: ./.github/workflows/lab5_reusablewf.yaml
     with:
-      dir: ${{ matrix.dir }}
+      directory: ${{ matrix.dir }}
