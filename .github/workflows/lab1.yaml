@@ -7,15 +7,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: default run
-        uses: ./.github/actions/lab1/action.yaml
+        uses: ./.github/actions/lab1
 
       - name: custom run with mandatory input
-        uses: ./.github/actions/lab1/action.yaml
+        uses: ./.github/actions/lab1
         with:
           say: GitHub Action Rocks
 
       - name: custom run with all inputs
-        uses: ./.github/actions/lab1/action.yaml
+        uses: ./.github/actions/lab1
         with:
           say: GitHub Action Rocks
           eyes: o-
