@@ -9,6 +9,14 @@ async function run() {
     const globber = await glob.create(patterns.join('\n'))
     for await (const file of globber.globGenerator()) {
       console.log(file)
+      try {
+        fs.accessSync(path.join(path.dirname(file), 'package-lock.json'));
+      } catch (err) {
+        core.warning(`Consider to generate it and commit it`, {
+          file: file,
+          title: 'Missing package-lock.json'
+        });
+      }
     }
   }
   catch (error) {
