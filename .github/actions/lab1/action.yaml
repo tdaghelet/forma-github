@@ -12,6 +12,6 @@ runs:
   using: 'docker'
   image: 'docker://rancher/cowsay:latest'
   args:
-    - '${{ inputs.say }}'
     - '-e'
     - '${{ inputs.eyes }}'
+    - '${{ inputs.say }}'
