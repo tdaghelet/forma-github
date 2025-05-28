@@ -12,4 +12,5 @@ jobs:
       - name: bats test
         run: |
           echo "run test..."
+          bats tests/lab-tests.bats
         shell: bash
