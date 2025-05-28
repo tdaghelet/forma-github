@@ -1,12 +1,15 @@
 name: LAB5
 on: pull_request
 jobs:
-  check-section:
+  check-section1:
+    permissions: write-all
     strategy:
-        matrix:
-            directory: [ 'docs/section1', 'docs/section2', 'docs/section3', 'docs/section4' ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/lab5_reusablewf.yaml
-        with:
-          directory: ${{ matrix.directory }}
+      matrix:
+        dir:
+          - docs/section1
+          - docs/section2
+          - docs/section3
+          - docs/section4
+    uses: ./.github/workflows/lab5_reusablewf.yaml
+    with:
+      dir: ${{ matrix.dir }}
