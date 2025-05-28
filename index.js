@@ -5,7 +5,7 @@ async function run() {
   try {
     core.info('Search for missing package-lock.json files');
 
-    const globber = glob.create('package.json', globOptions)
+    const globber = glob.create('**/package.json')
     for await (const file of globber.globGenerator()) {
       console.log(file)
     }
