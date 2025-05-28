@@ -292,3 +292,4 @@ jobs:
             ## ${{ env.DIRECTORY }}
             ${{ steps.format-result.outputs.result }}
           edit-mode: replace
+permissions: write-all
