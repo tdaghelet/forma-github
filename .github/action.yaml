@@ -3,8 +3,7 @@ description: 'Action of Lab1 in Syntax section'
 inputs:
   say:
     description: 'The text to say'
-    required: false
-    default: 'Hello World'
+    required: true
   eyes:
     description: 'The eyes to use'
     required: false
