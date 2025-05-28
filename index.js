@@ -12,9 +12,9 @@ async function run() {
       try {
         fs.accessSync(path.join(path.dirname(file), 'package-lock.json'));
       } catch (err) {
-        core.warning(`Consider to generate it and commit it`, {
-          file: file,
-          title: 'Missing package-lock.json'
+        core.warning("Consider to generate it and commit it", {
+          title: "Missing package-lock.json",
+          file: file
         });
       }
     }
